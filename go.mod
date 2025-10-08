@@ -1,4 +1,4 @@
-module github.com/Uniladin/backend-libs-go
+module uniladin-backend-libs
 
 go 1.23
 
