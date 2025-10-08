@@ -1,5 +1,7 @@
 package rabbitmq
 
+// =============== EXCHANGE NAMES ==============
+
 // Exchange names
 const (
 	ExchangeProfileEvents   = "profile.events"
@@ -12,6 +14,10 @@ const (
 	ExchangeTypeDirect = "direct"
 	ExchangeTypeFanout = "fanout"
 )
+
+// =============== END EXCHANGE NAMES ==============
+
+// =============== QUEUE NAMES ==============
 
 // Queue names - Profile
 const (
@@ -26,6 +32,10 @@ const (
 	QueueShareLinkAccessed = "sharelink.accessed"
 )
 
+// =============== END QUEUE NAMES ==============
+
+// =============== ROUTING KEYS ==============
+
 // Routing keys - Profile
 const (
 	RoutingKeyProfileCreated = "profile.created"
@@ -38,6 +48,8 @@ const (
 	RoutingKeyShareLinkCreated  = "sharelink.created"
 	RoutingKeyShareLinkAccessed = "sharelink.accessed"
 )
+
+// =============== END ROUTING KEYS ==============
 
 // Consumer tags
 const (
