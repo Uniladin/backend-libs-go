@@ -102,6 +102,7 @@ func IsUnrecoverableError(err error) bool {
 	// List of unrecoverable error indicators
 	unrecoverableIndicators := []string{
 		"json: cannot unmarshal", // JSON unmarshal errors
+		"failed to unmarshal",    // Custom unmarshal errors
 		"invalid argument",       // Invalid argument errors
 		// Add more indicators as needed
 	}
