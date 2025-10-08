@@ -57,7 +57,7 @@ func (c *Consumer) ConsumeQueue(ctx context.Context, queueName, consumerTag stri
 					log.Printf("❌ Error handling message from queue '%s': %v", queueName, err)
 					if IsUnrecoverableError(err) {
 						// Positive acknowledgment
-						msg.Ack(false)
+						msg.Nack(false, false)
 					} else {
 						// Negative acknowledgment - requeue the message
 						msg.Nack(false, true)
