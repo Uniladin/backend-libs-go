@@ -1,5 +1,5 @@
 module github.com/Uniladin/backend-libs-go
 
-go 1.25.1
+go 1.23
 
 require github.com/rabbitmq/amqp091-go v1.10.0
