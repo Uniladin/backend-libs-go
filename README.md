@@ -87,68 +87,6 @@ require (
 )
 ```
 
-## 📚 Constants Reference
-
-All packages provide typed constants to avoid hardcoded strings:
-
-```go
-// RabbitMQ exchanges
-rabbitmq.ExchangeProfileEvents   // "profile.events"
-rabbitmq.ExchangeShareLinkEvents // "sharelink.events"
-
-// Queues
-rabbitmq.QueueProfileCreated // "profile.created"
-rabbitmq.QueueProfileUpdated // "profile.updated"
-
-// Routing keys
-rabbitmq.RoutingKeyProfileCreated // "profile.created"
-
-// Default settings
-rabbitmq.DefaultPrefetchCount // 10
-```
-
-## 🚀 Services Using This Library
-
-- ✅ backend-profile
-- ⏳ backend-chat (coming soon)
-- ⏳ backend-notification (coming soon)
-- ⏳ backend-payment (coming soon)
-
-## 🔄 Development Workflow
-
-### Making Changes
-
-1. **Edit libs code:**
-
-   ```bash
-   cd libs
-   # Make changes to rabbitmq/ or other packages
-   ```
-
-2. **Test in service:**
-
-   ```bash
-   cd ../
-   go test ./...
-   go build ./...
-   ```
-
-3. **Commit libs changes:**
-
-   ```bash
-   cd libs
-   git add .
-   git commit -m "Add feature X"
-   git push origin main
-   ```
-
-4. **Update service to use new libs:**
-   ```bash
-   cd ../
-   git add libs
-   git commit -m "Update libs submodule"
-   ```
-
 ### Updating Libs in Other Services
 
 ```bash
@@ -163,20 +101,3 @@ git commit -m "Update libs to latest"
 Each package has its own README:
 
 - [rabbitmq/README.md](rabbitmq/README.md) - RabbitMQ client library
-
-## 🤝 Contributing
-
-1. Create feature branch
-2. Make changes
-3. Test in at least one service
-4. Create PR
-5. After merge, update services
-
-## 📝 License
-
-MIT
-
-## 🔗 Links
-
-- GitHub: https://github.com/Uniladin/backend-libs-go
-- Issues: https://github.com/Uniladin/backend-libs-go/issues
