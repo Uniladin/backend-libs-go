@@ -43,6 +43,7 @@ const (
 const (
 	RoutingKeyProfileChangeEmail = "profile.change_email"
 	RoutingKeyProfileDeleted     = "profile.deleted"
+	RoutingKeyProfileUndeleted   = "profile.undeleted"
 )
 
 // =============== END ROUTING KEYS ==============

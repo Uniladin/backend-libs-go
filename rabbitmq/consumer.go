@@ -65,7 +65,6 @@ func (c *Consumer) ConsumeQueue(ctx context.Context, queueName, consumerTag stri
 				} else {
 					// Positive acknowledgment
 					msg.Ack(false)
-					log.Printf("✅ Successfully processed message from queue '%s'", queueName)
 				}
 			}
 		}

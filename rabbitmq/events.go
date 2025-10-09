@@ -18,8 +18,11 @@ type ProfileChangeEmailEvent struct {
 }
 
 type ProfileDeletedEvent struct {
-	UserID    string `json:"user_id"`
-	DeletedAt int64  `json:"deleted_at"` // Unix timestamp
+	UserID string `json:"user_id"`
+}
+
+type ProfileUnDeletedEvent struct {
+	UserID string `json:"user_id"`
 }
 
 // ======== END PROFILE EVENTS ========
