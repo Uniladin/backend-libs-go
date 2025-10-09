@@ -4,8 +4,8 @@ package rabbitmq
 
 // Exchange names
 const (
-	ExchangeProfileEvents   = "profile.events"
-	ExchangeShareLinkEvents = "sharelink.events"
+	ExchangeAuthEvents    = "auth.events"
+	ExchangeProfileEvents = "profile.events"
 )
 
 // Exchange types
@@ -19,50 +19,37 @@ const (
 
 // =============== QUEUE NAMES ==============
 
-// Queue names - Profile
+// Queue names - Auth
 const (
-	QueueProfileCreated = "profile.created"
-	QueueProfileUpdated = "profile.updated"
-	QueueProfileDeleted = "profile.deleted"
+	QueueAuthCreated = "auth.created"
 )
 
-// Queue names - ShareLink
+// Queue names - Profile
 const (
-	QueueShareLinkCreated  = "sharelink.created"
-	QueueShareLinkAccessed = "sharelink.accessed"
+	QueueProfileChangeEmail = "profile.change_email"
+	QueueProfileDeleted     = "profile.deleted"
 )
 
 // =============== END QUEUE NAMES ==============
 
 // =============== ROUTING KEYS ==============
 
-// Routing keys - Profile
+// Routing keys - Auth
 const (
-	RoutingKeyProfileCreated = "profile.created"
-	RoutingKeyProfileUpdated = "profile.updated"
-	RoutingKeyProfileDeleted = "profile.deleted"
+	RoutingKeyAuthCreated = "auth.created"
 )
 
-// Routing keys - ShareLink
+// Routing keys - Profile
 const (
-	RoutingKeyShareLinkCreated  = "sharelink.created"
-	RoutingKeyShareLinkAccessed = "sharelink.accessed"
+	RoutingKeyProfileChangeEmail = "profile.change_email"
+	RoutingKeyProfileDeleted     = "profile.deleted"
 )
 
 // =============== END ROUTING KEYS ==============
 
-// Consumer tags
-const (
-	ConsumerProfileCreated    = "profile-service-created-consumer"
-	ConsumerProfileUpdated    = "profile-service-updated-consumer"
-	ConsumerProfileDeleted    = "profile-service-deleted-consumer"
-	ConsumerShareLinkCreated  = "sharelink-service-created-consumer"
-	ConsumerShareLinkAccessed = "sharelink-service-accessed-consumer"
-)
-
 // Default settings
 const (
-	DefaultPrefetchCount = 10
-	DefaultMaxRetries    = 5
-	DefaultRetryDelay    = 1 // seconds
+	DefaultPrefetchCount = 10 // Nhận N messages cùng lúc
+	DefaultMaxRetries    = 5  // Số lần retry tối đa
+	DefaultRetryDelay    = 1  // seconds
 )

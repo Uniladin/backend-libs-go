@@ -1,38 +1,25 @@
 package rabbitmq
 
-// ProfileCreatedEvent represents a profile creation event
-type ProfileCreatedEvent struct {
-	UserID    string `json:"user_id"`
-	Username  string `json:"username"`
-	Email     string `json:"email"`
-	CreatedAt int64  `json:"created_at"`
+// ======== AUTH EVENTS ========
+type AuthCreatedEvent struct {
+	UserID        string `json:"user_id"`
+	Phone         string `json:"phone,omitempty"`
+	Email         string `json:"email"`
+	EmailVerified bool   `json:"email_verified"`
 }
 
-// ProfileUpdatedEvent represents a profile update event
-type ProfileUpdatedEvent struct {
-	UserID    string `json:"user_id"`
-	Username  string `json:"username"`
-	UpdatedAt int64  `json:"updated_at"`
+// ======== END AUTH EVENTS ========
+
+// ======== PROFILE EVENTS ========
+type ProfileChangeEmailEvent struct {
+	UserID   string `json:"user_id"`
+	OldEmail string `json:"old_email"`
+	NewEmail string `json:"new_email"`
 }
 
-// ProfileDeletedEvent represents a profile deletion event
 type ProfileDeletedEvent struct {
 	UserID    string `json:"user_id"`
-	DeletedAt int64  `json:"deleted_at"`
+	DeletedAt int64  `json:"deleted_at"` // Unix timestamp
 }
 
-// ShareLinkCreatedEvent represents a share link creation event
-type ShareLinkCreatedEvent struct {
-	ShareLinkID string `json:"share_link_id"`
-	UserID      string `json:"user_id"`
-	ShortCode   string `json:"short_code"`
-	CreatedAt   int64  `json:"created_at"`
-}
-
-// ShareLinkAccessedEvent represents a share link access event
-type ShareLinkAccessedEvent struct {
-	ShareLinkID string `json:"share_link_id"`
-	ShortCode   string `json:"short_code"`
-	AccessedAt  int64  `json:"accessed_at"`
-	IPAddress   string `json:"ip_address,omitempty"`
-}
+// ======== END PROFILE EVENTS ========
