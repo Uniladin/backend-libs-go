@@ -18,7 +18,8 @@ type ProfileChangeEmailEvent struct {
 }
 
 type ProfileDeletedEvent struct {
-	UserID string `json:"user_id"`
+	UserID    string `json:"user_id"`
+	DeletedAt int64  `json:"deleted_at"`
 }
 
 type ProfileUnDeletedEvent struct {
