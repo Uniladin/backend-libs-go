@@ -49,9 +49,6 @@ func (c *Consumer) ConsumeQueue(ctx context.Context, queueName, consumerTag stri
 			case msg, ok := <-msgs:
 				if !ok {
 					log.Printf("Consumer channel closed for queue '%s'", queueName)
-					if err := handler(ctx, msg.Body); err != nil {
-						log.Printf("❌ Error handling message from queue '%s': %v", queueName, err)
-					}
 					return
 				}
 
@@ -106,6 +103,7 @@ func IsUnrecoverableError(err error) bool {
 		"json: cannot unmarshal", // JSON unmarshal errors
 		"failed to unmarshal",    // Custom unmarshal errors
 		"invalid argument",       // Invalid argument errors
+		"MISSING_FIELD",
 		// Add more indicators as needed
 	}
 	// Implement logic to determine if the error is unrecoverable
