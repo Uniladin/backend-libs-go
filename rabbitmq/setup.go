@@ -14,8 +14,7 @@ type ExchangeConfig struct {
 	Type string // e.g., "topic", "direct", "fanout"
 }
 
-// SetupProfileExchangeAndQueues sets up exchanges and queues for profile service
-func SetupProfileExchangeAndQueues(rmq *RabbitMQ, exchangeConfigs []ExchangeConfig, queueConfigs []QueueConfig) error {
+func SetupExchangeAndQueues(rmq *RabbitMQ, exchangeConfigs []ExchangeConfig, queueConfigs []QueueConfig) error {
 	for _, ec := range exchangeConfigs {
 		err := rmq.DeclareExchange(ec.Name, ec.Type, true, false)
 		if err != nil {
