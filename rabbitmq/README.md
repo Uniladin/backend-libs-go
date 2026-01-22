@@ -100,20 +100,30 @@ if err != nil {
 ## Event Structures
 
 ```go
-type ProfileCreatedEvent struct {
+type EventProfileCreated struct {
     UserID    string `json:"user_id"`
     Username  string `json:"username"`
     Email     string `json:"email"`
     CreatedAt int64  `json:"created_at"`
 }
 
-type ShareLinkCreatedEvent struct {
+type EventShareLinkCreated struct {
     ShareLinkID string `json:"share_link_id"`
     UserID      string `json:"user_id"`
     ShortCode   string `json:"short_code"`
     CreatedAt   int64  `json:"created_at"`
 }
 ```
+
+## Flow in service
+
+- `setup.go`: Setup Exchange And Queues khi service start
+- `handlers.go`: Xử lý các event nhận được từ RabbitMQ
+- `manager.go`: Quản lý việc publish và consume các event
+
+### Flow RabbitMQ
+
+- publish message -> exchange -> queue -> consumer -> handler
 
 ## License
 
