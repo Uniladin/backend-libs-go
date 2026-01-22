@@ -49,6 +49,9 @@ func (c *Consumer) ConsumeQueue(ctx context.Context, queueName, consumerTag stri
 			case msg, ok := <-msgs:
 				if !ok {
 					log.Printf("Consumer channel closed for queue '%s'", queueName)
+					if err := handler(ctx, msg.Body); err != nil {
+						log.Printf("❌ Error handling message from queue '%s': %v", queueName, err)
+					}
 					return
 				}
 

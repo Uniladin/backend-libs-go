@@ -16,6 +16,10 @@ func NewManager(rabbitmq *RabbitMQ) *Manager {
 	}
 }
 
+func (m *Manager) Close() {
+	m.rabbitmq.Close()
+}
+
 // GetPublisher trả về publisher instance
 func (m *Manager) GetPublisher() *Publisher {
 	return m.publisher

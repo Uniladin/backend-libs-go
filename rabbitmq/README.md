@@ -123,7 +123,7 @@ type EventShareLinkCreated struct {
 
 ### Flow RabbitMQ
 
-- publish message -> exchange -> queue -> consumer -> handler
+- publish message -> exchange -> routing -> queue -> consumer -> handler
 
 ## License
 
