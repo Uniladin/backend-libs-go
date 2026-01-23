@@ -57,10 +57,18 @@ func NewRabbitMQ(cfg Config) (*RabbitMQ, error) {
 
 	log.Println("✅ Successfully connected to RabbitMQ")
 
-	return &RabbitMQ{
+	mq := RabbitMQ{
 		conn:    conn,
 		channel: channel,
-	}, nil
+	}
+
+	err = mq.setupExchanges()
+	if err != nil {
+		conn.Close()
+		return nil, fmt.Errorf("failed to setup exchanges: %w", err)
+	}
+
+	return &mq, nil
 }
 
 // Close closes the RabbitMQ connection and channel
