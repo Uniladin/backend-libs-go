@@ -11,7 +11,7 @@ Thư viện RabbitMQ dùng chung cho các microservice Go của Uniladin. Thư v
 
 ## Cấu trúc thư mục
 
-- `rabbitmq.go`: tạo kết nối, tự setup exchange theo danh sách ở [setup.go](setup.go).
+- `rabbitmq.go`: tạo kết nối, tự setup exchange theo danh sách ở [setup.go](setup.go#L23).
 - `setup.go`: danh sách exchange dùng chung và helper `SetupQueues`.
 - `publisher.go`: publish message (có confirm).
 - `consumer.go`: consume, ack/nack, QoS, helper `UnmarshalMessage`, `IsUnrecoverableError`.
