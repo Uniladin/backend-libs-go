@@ -104,6 +104,10 @@ func IsUnrecoverableError(err error) bool {
 		"failed to unmarshal",    // Custom unmarshal errors
 		"invalid argument",       // Invalid argument errors
 		"MISSING_FIELD",
+		"INVALID_UUID",
+		"NOT_FOUND",
+		"NOT_ALLOWED",
+		"INVALID_INPUT",
 		// Add more indicators as needed
 	}
 	// Implement logic to determine if the error is unrecoverable
