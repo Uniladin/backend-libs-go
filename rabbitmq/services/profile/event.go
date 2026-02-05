@@ -14,3 +14,10 @@ type EventProfileDeleted struct {
 type EventProfileUnDeleted struct {
 	UserID string `json:"user_id"`
 }
+
+type EventProfileIncreaseElo struct {
+	PersonaID     string `json:"persona_id"`
+	ActionType    string `json:"action_type"`
+	Source        string `json:"source"`
+	DeltaOverride *int32 `json:"delta_override,omitempty"`
+}
